@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: olive;
+				position: absolute;
+				top: 30px;
+				left: 8px;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<button>点击</button>
+		<div></div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var b=document.getElementsByTagName("button")[0];
+				var a=document.getElementsByTagName("div")[0];
+				var begin=0;
+				var end=600;
+				b.onclick=function(){
+					setInterval(function(){
+						begin=begin+(end-begin)/10;
+						a.style.left=begin+"px";
+						
+					},20)
+				}
+			}
+		</script>
+	</body>
+</html>

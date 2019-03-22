@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>增加一个checked属性</title>
+	</head>
+	<body>
+	<button>全选</button>
+	<button>不选</button>
+	<button>反选</button>
+	<br />
+	<label>篮球：<input type="checkbox"/></label><br />
+	<label>篮球：<input type="checkbox"/></label><br />
+	<label>篮球：<input type="checkbox"/></label><br />
+	<label>篮球：<input type="checkbox"/></label><br />
+	<label>篮球：<input type="checkbox"/></label><br />
+	<script>
+			var btn=document.getElementsByTagName("button");
+			var ins=document.getElementsByTagName("input");
+			btn[0].onclick=function(){
+			  for(var i=0;i<ins.length;i++){
+			  ins[i].checked=true;
+			  
+			  }
+			
+			}
+			btn[1].onclick=function(){
+			  for(var i=0;i<ins.length;i++){
+			  ins[i].checked=false;
+			  
+			  }
+			
+			}
+			btn[2].onclick=function(){
+			  for(var i=0;i<ins.length;i++){
+			    if(ins[i].checked==true){
+			      ins[i].checked=false;
+			    }else{
+			     ins[i].checked=true;
+			    }
+			 
+			  
+			  }
+			
+			}
+	
+	
+	</script>
+	</body>
+</html>

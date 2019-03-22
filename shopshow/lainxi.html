@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			
+		}
+	    .parent{
+	    	width: 360px;
+	    	height: 430px;
+	    	margin: 0 auto;
+	    	border: 1px solid black;
+	    }
+	    .big{
+	    	width: 360px;
+	    	height: 360px;
+	    	background-image: url(img/01big.jpg);
+	    }
+	    .son{
+	    	width: 100%;
+	    	height: 70px;
+	    	
+	    }
+	    .son img{
+	    	float: left;
+	    }
+	    
+	    
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="big"></div>
+			<div class="son">
+				<img src="img/01.jpg" />
+				<img src="img/02.jpg" />
+				<img src="img/03.jpg" />
+				<img src="img/04.jpg" />
+				<img src="img/05.jpg" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var img=document.getElementsByTagName("img");
+			    var son=document.getElementsByClassName("big")[0];
+			   for(var i=0;i<img.length;i++){
+			   	  (function(i){
+			   	  img[i].onmouseover=function(){
+			   	  	son.style.backgroundImage="url(img/0"+(i+1)+"big.jpg)";   
+			   	  }
+			   	  })(i)
+			   }
+			}
+		</script>
+	</body>
+</html>

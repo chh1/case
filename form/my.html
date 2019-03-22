@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onblur 事件会在对象失去焦点时发</title>
+		<style>
+		.a{
+			margin: 100px auto;
+			width: 400px;
+			height: 30px;
+		}
+		.a input{
+			width: 150px;
+			height: 20px;
+			float: left;
+		}
+		 .a label{
+			 width: 50px;
+			 height: 20px;
+			 float: left;
+		 }
+		 .a span{
+			 width: 150px;
+			 height: 26px;
+			 line-height: 26px;
+			 text-indent: 20px;
+		     background-color: olive;
+		    float: left;
+		 }
+		 .a span.wrong{
+		   background: url(img/wrong.png) no-repeat #FFDCD0  4px 3px;
+		 }
+		.a span.right{
+		   background :url(img/right.png) no-repeat #FFDCD0  4px 3px;
+		}
+		</style>
+	</head>
+	<body>
+	<div class="a">
+			<label>高数</label>
+			<input type="text" />
+			<span>请输入数字</span>
+	
+	</div>
+	<script>
+			var ins=document.getElementsByTagName("input")[0];
+			var aa=document.getElementsByTagName("span")[0];
+			//失去焦点  
+		   ins.onblur=function(){
+			var val=ins.value;//获取value值
+			if(val==""){
+			aa.innerText="不能为空";
+			aa.className="wrong";		
+			}
+			else if(val<0||val>150){
+				aa.innerText="不在范围内";
+				aa.className="wrong";
+				
+			
+			}
+			else if(isNaN(Number(val))){
+				aa.innerText="请输入数值";
+				aa.className="wrong";
+			}
+			else{
+				aa.innerText="输入正确";
+				aa.className="right";
+			}
+			}
+	
+	</script>
+	</body>
+</html>

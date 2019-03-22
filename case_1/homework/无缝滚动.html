@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.box{
+				width: 600px;
+				height: 200px;
+				margin: 100px auto;
+				background-color: olive;
+				position: relative;
+				overflow: hidden;
+			}
+			.box ul{
+				list-style: none;
+				float: left;
+				position: absolute;
+				width: 400%;
+			}
+			.box ul li{
+				float: left;
+			}img{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li><img src="../img/01.jpg"/></li>
+				<li><img src="../img/02.jpg"/></li>
+				<li><img src="../img/03.jpg"/></li>
+				<li><img src="../img/04.jpg"/></li>
+				<li><img src="../img/01.jpg"/></li>
+				<li><img src="../img/02.jpg"/></li>
+			</ul>
+		</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var box=document.getElementsByTagName("box");
+			var ul=document.getElementsByTagName("ul")[0];
+			var num=0;
+			function move(){
+				if(num<-1200){
+					num=0;
+				}else{
+					num--;
+				}
+				ul.style.left=num+"px";
+				var timer=setInterval(move,2);
+				box.onmouseover(){
+					clearInterval(timer);
+					
+				}
+				box.onmouseover(){
+				  timer=setInterval(move,2);
+					
+				}
+				
+				
+			}
+		}
+	</script>
+		
+	</body>
+</html>

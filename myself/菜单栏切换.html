@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			a{
+				text-decoration: none;
+				color:white;
+				
+			}
+			.parent{
+				width: 100%;
+				height: 60px;
+			    background-color: khaki;
+			    
+			}
+			.parent .head{
+				width: 1000px;
+				height: 60px;
+				margin: 0 auto;
+			   background-color: olive;
+				
+			}
+			.parent .head a{
+				width: 20%;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				float:left ;
+			}
+			.parent .head a .active{
+				background-color: darkgoldenrod;
+				color:white;
+			}
+			.parent .head a:hover{
+				background-color: darkgoldenrod;
+				color:white;
+			}
+			
+			/*头部结束*/
+			.body{
+				width: 100%;
+				height:200px;	
+				background-color: hotpink;
+			}
+			.body .dd{
+				width: 100%;
+				height: 200px;
+				display: none;
+				/*display: block;  就是将不是块级的标签转化为块级标签*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">	
+			<div class="head">
+				<!--默认第一个被激活-->
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>	
+		</div>
+		<div class="body">
+			<!--里面的style="display: block"是将对象块状化-->
+			<div class="dd" style="display: block;">11111111111</div>
+			<div class="dd">222222222</div>	
+			<div class="dd">33333333333</div>
+			<div class="dd">4444444444</div>
+			<div class="dd">5555555555</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var lis=document.getElementsByTagName("a");
+				var dd=document.getElementsByClassName("dd");
+				for(var i=0;i<lis.length;i++){
+					(function(i){
+						//鼠标挪移  对上一个的激活消失，增加激活当前所点击的
+						for(var j=0;j<lis.length;j++){
+							lis[j].className="";//获取类 激活
+						    dd[j].style.display="none";
+						}
+						lis[i].className="active";//获取类 激活
+						dd[i].style.display="block";//对其显示
+					}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+</html>

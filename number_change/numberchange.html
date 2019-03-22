@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+				/*li:nth-child(2n){
+					background-color: yellow;
+					
+				}
+				li:nth-child(2n+1){
+					background-color: red;
+				}
+				li:hover{
+					background-color: purple;
+				}*/
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload=function(){
+			var lis=document.getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				if(i%2==0){//判断奇数偶数  偶数是红色
+					lis[i].style.backgroundColor="red";
+					
+				}else{//否则奇数书黄色
+					
+					lis[i].style.backgroundColor="yellow";
+				}
+				(function(i){//匿名函数的应用
+					lis[i].onmouseover=function(){//移入
+						lis[i].style.backgroundColor="purple";
+					}
+					lis[i].onmouseout=function(){//鼠标移出
+//						lis[i].style.backgroundColor="purple";
+								//然后再判断奇数偶数  鼠标移出的颜色  鼠标移出变为原来颜色
+								if(i%2==0){
+								lis[i].style.backgroundColor="red";
+					
+								}else{
+									lis[i].style.backgroundColor="yellow";
+								}
+					}
+				})(i)
+				
+				
+			}
+			}
+		</script>
+	</body>
+</html>

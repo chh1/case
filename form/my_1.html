@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		div{
+			width: 500px;
+			height: 30px;
+			margin: 100px auto;
+			
+		}
+		div label{
+		width: 40px;
+		height: 20px;
+		float: left;
+		}
+		div input{
+		width: 150px;
+		height: 20px;
+		float: left;
+		
+		}
+		div span{
+		  width:150px;
+		  height: 25px;
+		  line-height: 25px;
+		  background-color: orangered;
+		  text-indent: 20px;
+		  font-size: 14px;
+		  float: left;
+		}
+		div span .wrong{
+		background: url(img/wrong.png) no-repeat gold 5px 6px;
+		}
+		div span .right{
+		background: url(img/right.png) no-repeat gold 5px 6px;
+		}
+		</style>
+		
+	</head>
+	<body>
+	<div>
+	 <label>高数</label>
+	 <input type="text" />
+	 <span>请输入数值</span>
+	</div>
+	<script>
+	  var input=document.getElementsByTagName("input")[0];
+	  var sp=document.getElementsByTagName("span")[0];
+	  input.onblur=function(){
+	  		var val=input.value;
+	  		if(val==""){
+	  		sp.innerText="不能为空";
+	  		sp.className="wrong";
+	  		}
+	  		 else if(isNaN(Number(val))){
+	  		sp.innerText="请输入数值";
+	  		sp.className="wrong";
+	  		}
+	  		else if(val<0||val>150){
+	  		sp.innerText="不在范围内";
+	  		sp.className="wrong";
+	  		}
+	  		else{
+	  		sp.innerText="输入正确";
+	  		sp.className="right";
+	  		}
+	  }
+	
+	
+	</script>
+	</body>
+</html>

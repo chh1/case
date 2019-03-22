@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;				
+			}
+			.box{
+				width: 600px;
+				height: 200px;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+				background-color:olive;
+			}
+			.box ul{
+				list-style: none;
+				position: absolute;
+				width: 400%;
+				top: 0;
+				left: 0;
+			}
+			.box ul li{
+				float: left;
+			}
+			img{
+				float: ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li><img src="../img/01.jpg"/></li>
+				<li><img src="../img/02.jpg"/></li>
+				<li><img src="../img/03.jpg"/></li>
+				<li><img src="../img/04.jpg"/></li>
+				<li><img src="../img/01.jpg"/></li>
+				<li><img src="../img/02.jpg"/></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var ul=document.getElementsByTagName("ul")[0];
+				var div=document.getElementById("box");
+				var num=0;
+				function move(){
+					if(num<-1200){
+						num=0;
+						
+					}else{
+						num--;
+						
+					}
+					ul.style.left=num+"px";
+				}
+				//鼠标滑进划出
+				var  tt=setInterval(move,3);
+				div.onmouseover=function(){
+					clearInterval(tt);
+				}
+				div.onmouseout=function(){
+				tt=setInterval(move,3);
+				}
+			}
+		</script>
+	</body>
+</html>
